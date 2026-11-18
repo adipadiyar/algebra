@@ -1,0 +1,112 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+
+\newtheorem{claim}{Claim}
+
+\title{Module Theory}
+
+\author{Aditya Padiyar}
+
+\begin{document}
+
+\maketitle
+
+\begin{claim}
+  If $M$ is a simple $R$-module, then there is a maximal ideal $I$ in $R$ and an isomorphism of $R$-modules $\Psi:\frac{R}{I} \to M$
+\end{claim}
+
+\begin{proof}
+  Suppose $x \in M$ is nonzero. 
+  Let $I$ be the annihilator of $x$ and $\phi:R \to M$ be the $R$ module homomorphism defined by $r \to rx$.
+  \begin{itemize}
+    \item Since $M$ is simple $\phi$ is surjective
+    \item Apply the correspondence theorem to $\phi$ to see that $I$ is maximal
+    \item Apply the first isomorphism theorem to $\phi$ to get $\Psi$ as required.
+  \end{itemize}
+\end{proof}
+
+\begin{claim}
+  Suppose $f:M \to N$ is a homomorphism of $R$-modules.
+  If the induced map $g:\frac{M}{IM} \to \frac{N}{IN}$ is surjective, then $N=f(M)+I^kM$ for all $k \geq 1$
+\end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item From the surjectivity of $g$ we have $N=f(M) + IN$
+    \item Suppose $N=f(M)+I^kM$. 
+          We have \[IN = If(M) + I^{k+1}M = f(IM) + I^{k+1}M \subseteq f(M) + I^{k+1}M\] which shows $N=f(M)+I^{k+1}M$
+  \end{itemize}
+\end{proof}
+
+\begin{claim}
+  Suppose $m$ and $n$ are coprime positive integers and $f:m\mathbb{Z} \to \frac{\mathbb{Z}}{n\mathbb{Z}}$ is a homomorphism of $\mathbb{Z}$-modules. 
+  Then there is a $\mathbb{Z}$-module homomorphism $g:\mathbb{Z} \to \frac{\mathbb{Z}}{n\mathbb{Z}}$ which extends $f$
+\end{claim}
+
+\begin{proof}
+  Let $a,b \in \mathbb{Z}$ be such that $am+bn=1$ and define $g(x)=(xa)f(m)$
+\end{proof}
+
+\begin{claim}
+  Fix $n>1$. Then there is no $\mathbb{Z}$-module homomorphism $f:\mathbb{Z} \to \mathbb{Z}$ such that $f(mn)=m$ for all $m \in \mathbb{Z}$
+\end{claim}
+
+\begin{proof}
+  If $f$ is such a map, then we have $f(n)=nf(1)$ by linearity. But we also have $f(n)=1$ by hypothesis. Since $n>1$ this impossible.
+\end{proof}
+
+\begin{claim}
+  Suppose $M$ and $N$ are simple $R$-modules and $f:M \to N$ is an $R$ module homomorphism. Then either $f=0$ or $f$ is an isomorphism.
+\end{claim}
+
+\begin{proof}
+  Suppose $f \neq 0$. Then:
+  \begin{itemize}
+    \item The kernel of $f$ must be $0$ since $M$ is simple
+    \item The image of $f$ must be $N$ since $N$ is simple
+  \end{itemize}
+\end{proof}
+
+\begin{claim}
+  Suppose $M$ is a free $R$ module that has basis $x_1,x_2,\dots,x_n$. Then the map $\Psi:\text{End}(M) \to M_n(R)$ defined by $Tx_j = \sum \Psi(T)_{ij}x_i$ is an isomorphism of $R$ algebras
+\end{claim}
+
+\begin{claim}
+  Suppose $A$ is a finite dimensional division algebra over an algebraically closed field $F$.
+  Then the following hold:
+  \begin{itemize}
+    \item for $a \in A$ the substitution map from $F[x]$ to $A$ is not injective
+    \item $A$ has basis $1_A$ 
+    \item the map from $F$ to $A$ given by $\alpha \to \alpha 1_A$ is an isomorphism of $F$ algebras 
+  \end{itemize}
+\end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item If the substitution map was injective, then $A$ would be infinite dimensional. Hence there is a monic polynomial $p(x)$ such that $p(a)=0$
+    \item Let $a \in A$. Since $F$ is algebraically closed, we have \[(a-\alpha_1 1_A)(a-\alpha_2 1_A)\dots(a-\alpha_n 1_A)=0\]
+    Since $A$ is a division algebra we have $a=\alpha_i 1_A$ for some $i$
+  \end{itemize}
+\end{proof}
+
+\begin{claim}
+  There is a finitely generated module $M$ over a PID $R$ and a submodule $N$ such that there is no submodule $E$ with $M = E \bigoplus N$
+\end{claim}
+
+\begin{proof}
+  Set $M,R=\mathbb{Z}$ and $N=2\mathbb{Z}$
+\end{proof}
+
+\begin{claim}
+  Suppose $M$ is a finitely generated module over a PID and $N$ is a submodule. 
+  Suppose $\frac{M}{N}$ is torsion free. Then there is a submodule $E$ such that $M = E \bigoplus N$
+\end{claim}
+
+
+
+\end{document}
