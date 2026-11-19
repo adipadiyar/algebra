@@ -210,12 +210,14 @@
            \frac{\mathbb{Z}}{5\mathbb{Z}} \times \frac{\mathbb{Z}}{25\mathbb{Z}}$
   \end{itemize}
   
-  There are $27$ elements $x$ that satisfy $3x=0$ in this module
 \end{claim}
 
+\begin{proof}
+  This follows from the Chinese Remainder Theorem.
+\end{proof}
+
 \begin{claim}
-  Suppose $V$ is a finite dimensional vector space over $F$ and \\ $T \in \text{End}(V)$. Then:
-  
+  Suppose $V$ is a finite dimensional vector space over $F$ and \\ $T \in \text{End}(V)$. Then we have the following:
   \begin{itemize}
     \item $V$ is an $F[x]$ module when endowed with the map $p(x) \times v \to p(T)v$
     \item Suppose that
@@ -225,7 +227,16 @@
           \end{itemize}
           Then $V$ is isomorphic as an $F[x]$ module to $\frac{F[x]}{(x-2)} \times \frac{F[x]}{(x-2)(x-3)^2}$
   \end{itemize}
-
 \end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item By the structure theorem $V$ is isomorphic to $\prod_{i=1}^k \frac{F[x]}{p_i(x)}$, where $p_i$ divides $p_{i+1}$
+    \item $p_k$ must be the minimal polynomial of $T$
+    \item Since $V$ is four dimensional over $F$ we must have $k=2$ and $p_1$ a linear polynomial 
+    \item The map $T$ corresponds to the action of the linear polynomial $x$. This forces $p_1(x)=(x-2)$
+  \end{itemize}
+\end{proof}
 
 \end{document}
