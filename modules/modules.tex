@@ -121,15 +121,56 @@
   
   \begin{itemize}
     \item $N \to \text{Hom}(M,N)$ where $N$ is an $R$-module
-    \item $T \to (S \to T \circ S)$ where $T \in \text{Hom}(N_1,N_2)$
+    \item $T \to (S \to TS)$ where $T \in \text{Hom}(N_1,N_2)$
   \end{itemize}
   
   Then the following hold:
   \begin{itemize}
     \item This functor is left exact
-    \item It is right exact if and only if $M$ is projective
+    \item It is exact if and only if $M$ is projective
   \end{itemize}
+
 \end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item 
+    
+    \begin{itemize}
+      \item set up a short exact sequence
+          \begin{itemize}
+            \item Suppose $0 \to M_1 \to M_2 \to M_3 \to 0$ is a short exact sequence
+            \item call the intermediate maps $T_1 : M_1 \to M_2$ and $T_2: M_2 \to M_3$  
+            \item let $T_1^*$ and $T_2^*$ be their images under the functor
+          \end{itemize}
+      
+      \item the functor is left exact:
+            \begin{itemize}
+              \item If $T_1^*S=T_1S=0$ then since $T_1$ is injective we must have $S=0$ which shows $T_1^*$ is injective
+              \item 
+                \begin{itemize}
+                  \item Suppose $S \in \text{image}(T_1^*)$. Since $T_2T_1=0$ we have $T_2S=0$ which shows $S \in \text{ker}(T_2^*)$
+                  \item Suppose $S \in \text{ker}(T_2^*)$. Then $T_2S=0$ which means $S$ maps into $\text{ker }T_2 = \text{image }T_1$. 
+                        Since $T_1$ is injective we can define $U \in \text{Hom}(M,M_1)$ by $T_1U=S$. This shows $S \in \text{image}(T_1^*)$
+                \end{itemize}
+            \end{itemize} 
+    
+      \item Suppose $M$ is projective. Suppose $T \in \text{Hom}(M,M_3)$. 
+            There is $S$ with $T_2S=T_3$ by the lifting property of projective modules, since $T_2$ is surjective.
+            Hence $T_2^*$ is surjective.
+    \end{itemize}
+    
+    \item Suppose that:
+          \begin{itemize}
+            \item the functor is exact
+            \item $T \in \text{Hom}(M,N)$
+            \item $S \in \text{Hom}(M_0,N)$ is surjective
+          \end{itemize}
+          Consider the short exact sequence $0 \to \text{ker}(S) \to M_0 \to N \to 0$. 
+          By exactness, there is $U \in \text{Hom}(M,M_0)$ such that $SU=T$. Hence the lifting property is satisfied.
+  \end{itemize}
+\end{proof}
 
 \begin{claim}
   Fix an $R$-module $N$ and consider the following contravariant functor on the category of $R$-modules.
