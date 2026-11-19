@@ -174,26 +174,40 @@
 
 \begin{claim}
   Fix an $R$-module $N$ and consider the following contravariant functor on the category of $R$-modules.
-  
   \begin{itemize}
     \item $M \to \text{Hom}(M,N)$ where $M$ is an $R$-module
     \item $T \to (S \to S \circ T)$ where $T \in \text{Hom}(M_1,M_2)$
   \end{itemize}
-  
   This is left exact 
 \end{claim}
+
+\begin{proof}
+  Suppose $M_1 \to M_2 \to M_3 \to 0$ is an exact sequence where the intermediate maps are $T_1$ and $T_2$. Let $N_2=\text{ker}(T_2)$. Consider the following:
+  \begin{itemize}
+    \item Suppose $T_2^*(S)=ST_2=0$. Since $T_2$ is surjective $S=0$
+    \item 
+    \begin{itemize}
+      \item Suppose $S \in \text{image}(T_2^*)$. Since $T_2T_1=0$ we have $ST_1=0$. This shows $S \in \text{kernel}(T_1^*)$
+      \item Suppose $S \in \text{kernel}(T_1^*)$ which means $ST_1=0$. 
+            \begin{itemize}
+              \item Since $N_2 = \text{image}(T_1)$ we get $N_2 \subseteq \text{ker}(S)$
+              \item By the quotient property we get $\widetilde{U} \in \text{Hom}(\frac{M_2}{N_2},N)$ such that $\widetilde{U}\pi=S$
+              \item By the first isomorphism theorem we get an isomorphism $\widetilde{T_2}:\frac{M_2}{N_2} \to M_3$ such that $T_2 = \widetilde{T_2}\pi$
+              \item Define $U \in \text{Hom}(M_3,N)$ by $U\widetilde{T_2}=\widetilde{U}$. Then $UT_2=S$
+            \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{proof}
 
 \begin{claim}
   The following $\mathbb{Z}$-modules are isomorphic
   
   \begin{itemize}
-    
     \item $\frac{\mathbb{Z}}{12\mathbb{Z}} \times \frac{\mathbb{Z}}{90\mathbb{Z}} \times \frac{\mathbb{Z}}{150\mathbb{Z}}$
     \item $\frac{\mathbb{Z}}{6\mathbb{Z}} \times \frac{\mathbb{Z}}{30\mathbb{Z}} \times \frac{\mathbb{Z}}{900\mathbb{Z}}$
     \item $\left(\frac{\mathbb{Z}}{2\mathbb{Z}} \right)^2 \times \frac{\mathbb{Z}}{4\mathbb{Z}} \times 
-              \left(\frac{\mathbb{Z}}{3\mathbb{Z}}\right)^2 \times \frac{\mathbb{Z}}{9\mathbb{Z}}  \times 
-              \frac{\mathbb{Z}}{5\mathbb{Z}} \times \frac{\mathbb{Z}}{25\mathbb{Z}}$
-  
+           \left(\frac{\mathbb{Z}}{3\mathbb{Z}}\right)^2 \times \frac{\mathbb{Z}}{9\mathbb{Z}}  \times 
+           \frac{\mathbb{Z}}{5\mathbb{Z}} \times \frac{\mathbb{Z}}{25\mathbb{Z}}$
   \end{itemize}
   
   There are $27$ elements $x$ that satisfy $3x=0$ in this module
