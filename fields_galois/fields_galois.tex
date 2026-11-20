@@ -92,7 +92,7 @@
 \begin{claim}
   Let $K=\mathbb{Q}(\sqrt{2},\sqrt{3},\sqrt{5})$. Then the following hold:
   \begin{itemize}
-    \item $K$ has degree $8$ over $\mathbb{Q}$
+    \item $K$ is a degree $8$ Galois extension over $\mathbb{Q}$
     \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $(\frac{\mathbb{Z}}{2\mathbb{Z}})^3$
     \item there are 16 intermediate fields
   \end{itemize}
@@ -101,16 +101,17 @@
 \begin{proof}
   Consider the following:
   \begin{itemize}
-    \item It is easy to see that $K$ has degree $8$ over $\mathbb{Q}$
-    \item Since every element of $\text{Aut}(K/\mathbb{Q})$ must have order at most 2, the only possible group is $(\frac{\mathbb{Z}}{2\mathbb{Z}})^3$
-    \item $\text{Aut}(K/\mathbb{Q})$ has 16 subgroups
+    \item This is easy to verify
+    \item Since every element of $\text{Aut}(K/\mathbb{Q})$ has degree at most 2 the only possible group is $(\frac{\mathbb{Z}}{2\mathbb{Z}})^3$
+    \item this is because $(\frac{\mathbb{Z}}{2\mathbb{Z}})^3$ has 16 subgroups
   \end{itemize}
 \end{proof}
 
+
 \begin{claim}
-  Let $p(x)=x^4-2 \in \mathbb{Q}[x]$ and $K$ be its splitting field. Then the following hold:
+  Let $K=\mathbb{Q}(\alpha,i)$, where $\alpha=2^\frac{1}{4}$. Then the following hold:
   \begin{itemize}
-    \item $K$ has degree 8 over $\mathbb{Q}$
+    \item $K$ is a degree 8 Galois extension over $\mathbb{Q}$
     \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to the dihedral group with 8 elements
   \end{itemize}
 \end{claim}
@@ -118,22 +119,52 @@
 \begin{proof}
   Consider the following:
   \begin{itemize}
-    \item It is easy to see that $K$ has degree $8$ over $\mathbb{Q}$
-    \item Since there are exactly two elements of order 4 and no elements of order 8, we must have $D_4$
+    \item this is easy to verify
+    \item Define the following elements of $\text{Aut}(K/\mathbb{Q})$:
+          \begin{itemize}
+            \item let $\sigma$ be such that $\sigma(\alpha)=\alpha i$ and $\sigma(i)=i$
+            \item let $\tau$ be such that $\tau(\alpha)=\alpha$ and $\tau(i)=-i$ 
+          \end{itemize}
+          Then we have:
+          \begin{itemize}
+            \item $\sigma^4=1$
+            \item $\tau^2=1$ 
+            \item $\sigma \tau = \tau \sigma^3$
+          \end{itemize}
   \end{itemize}
 \end{proof}
 
 \begin{claim}
-  Let $K=\mathbb{Q}(e^{i\frac{2\pi}{7}})$. Then $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{6\mathbb{Z}}$
+  Let $K=\mathbb{Q}(\omega_7)$, where $\omega_7 = e^{i\frac{2\pi}{7}}$. Then we have:
+  \begin{itemize}
+    \item $K$ is a degree 6 Galois extension of $\mathbb{Q}$
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{6\mathbb{Z}}$
+  \end{itemize}
 \end{claim}
 
-\begin{claim}
-  Let $p(x)=x^4+1 \in \mathbb{Q}[x]$ and $K$ be its splitting field. Then the following hold:
+\begin{proof}
+  Consider the following:
   \begin{itemize}
-    \item $K$ has degree 4 over $\mathbb{Q}$
+    \item The cyclotomic polynomial is irreducible
+    \item the element of $\text{Aut}(K  / \mathbb{Q})$ that sends $\omega_7 \to \omega_7^3$ has order 6
+  \end{itemize}
+\end{proof}
+
+\begin{claim}
+  Let $K=\mathbb{Q}(e^{i\frac{\pi}{4}})$. Then the following hold:
+  \begin{itemize}
+    \item $K$ is a degree 4 Galois extension over $\mathbb{Q}$
     \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to the Klein four group
   \end{itemize}
 \end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item this is the splitting field of $x^4+1$
+    \item there are no order 4 elements
+  \end{itemize}
+\end{proof}
 
 \begin{claim}
   Let $p(x)=x^5-4x+2 \in \mathbb{Q}[x]$ and $K$ be its splitting field. Then the following hold:
@@ -155,10 +186,7 @@
 \end{claim}
 
 \begin{claim}
-  Let $p(x)=x^5-2 \in \mathbb{Q}[x]$ and $K$ be its splitting field. Then the following hold:
-  \begin{itemize}
-    \item $K$ has degree 20 over $\mathbb{Q}$
-  \end{itemize}
+  Let $K=\mathbb{Q}(\alpha,\omega_5)$, where $\alpha=2^\frac{1}{5}$. Then $K$ has degree 20 over $\mathbb{Q}$
 \end{claim}
 
 \begin{claim}
