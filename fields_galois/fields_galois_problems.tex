@@ -1,7 +1,9 @@
 \documentclass{article}
 \usepackage{amsmath,amsthm,amsfonts,amssymb}
 
-\title{Some problems in field theory}
+\newtheorem{claim}{Claim}
+
+\title{Fields and Galois Theory}
 
 \author{Aditya Padiyar}
 
@@ -11,39 +13,116 @@
 
 \maketitle
 
-\begin{enumerate}
-    \item Give an example of a degree 4 extension with exactly one intermediate subfield
-    
-    \textbf{Solution} Consider the fields $\mathbb{Q} \subset \mathbb{Q}(\alpha^2) \subset \mathbb{Q}(\alpha)$, where $\alpha > 0$ is such that $\alpha^4-2=0$
-    
-    \item Give an example of a degree 4 extension with infinitely many intermediate subfields
-    
-    \textbf{Solution} Consider the fields $F \subset F(\alpha +c \beta) \subset \frac{R}{I}$ where $F = \mathbb{F}_2(x,y)$, $R=F[s,t], I = (s^2-x,t^2-y), \alpha = s + I, \beta = t + I, c \in F$ %why is I maximal
+\begin{claim}
+  There is a degree 4 extension of $\mathbb{Q}$ with exactly one intermediate subfield
+\end{claim}
 
-    \item Let $\alpha = \sqrt{2}$ and $\beta > 0$ be such that $\beta^3 - 5 = 0$. Show that $[\mathbb{Q}(\alpha + \beta): \mathbb{Q}]=6$
-    
-    \textbf{Solution} Use the fact that a $\mathbb{Q}$-basis for $\mathbb{Q}(\alpha,\beta)$ is given by \[\{1,\beta,\beta^2,\alpha,\alpha\beta,\alpha\beta^2\}\]
+\begin{proof}
+  Consider the fields $\mathbb{Q} \subset \mathbb{Q}(\alpha^2) \subset \mathbb{Q}(\alpha)$, where $\alpha = 2^\frac{1}{4}$ 
+\end{proof}
 
-    \item Suppose we have $F \subset R \subset K$, where $F,K$ are fields, $R$ is a ring, and $K$ is algebraic over $F$. Show that $R$ is a field.
-    
-    \textbf{Solution} Let $r \neq 0 \in R$. The map $M$ from $F[r] \to F[r]$ given by $x \to rx$ is $F$-linear and injective. Since $F[r]$ is finite dimensional over $F$, $M$ must be surjective as well.
+\begin{claim}
+  There is a degree 4 extension with infinitely many intermediate subfields
+\end{claim}
 
-    \item Suppose $F \subset K$ is a finite extension and $\alpha_1 \in K$. Consider the $F$-linear map $M$ from $K \to K$ given by $x \to \alpha_1 x$. Find the trace, determinant and characteristic polynomial of $M$
-    
-    \textbf{Solution} We let $K=F(\alpha_1,\dots,\alpha_n)$, so that a basis of $K$ is given by $\alpha_1^{j_1}\alpha_2^{j_2}\dots \alpha_n^{j_n}$. Let $p(x) \in F[x]$ be the irreducible polynomial of $\alpha$ and $C$ its companion matrix. The matrix of $M$ is then $\text{diag}(C,C,\dots,C)$.
+\begin{proof}
+  Consider the fields $F \subset F(\alpha +c \beta) \subset \frac{R}{I}$ where $F = \mathbb{F}_2(x,y)$, $R=F[s,t], I = (s^2-x,t^2-y), \alpha = s + I, \beta = t + I, c \in F$ 
+\end{proof}
 
-    \item Let $\alpha = \text{cos}(\frac{2\pi}{7})$. Show that $[\mathbb{Q}(\alpha):\mathbb{Q}]=3$
-    
-    \textbf{Solution} Let $w = e^{i\frac{2\pi}{7}}$. Then we have $w^2-2\alpha w +1 =0$
+\begin{claim}
+  Let $\alpha = \sqrt{2}$ and $\beta > 0$ be such that $\beta^3 - 5 = 0$. Then $[\mathbb{Q}(\alpha + \beta): \mathbb{Q}]=6$
+\end{claim}
 
-    \item Suppose $f(x),g(x) \text{ are coprime in }F[x]$ with $\text{deg } f < \text{deg } g=n$. Let $\alpha=\frac{f(x)}{g(x)} \in F(x)$. Show that $[F(x):F(\alpha)]=n$
-    
-    \textbf{Solution} Use Gauss's lemma
+\begin{proof}
+  Use the fact that a $\mathbb{Q}$-basis for $\mathbb{Q}(\alpha,\beta)$ is given by \[\{1,\beta,\beta^2,\alpha,\alpha\beta,\alpha\beta^2\}\]
+\end{proof}
 
-    \item Suppose that every polynomial in $F[x]$ has a root in a separable algebraic extension $K$ of $F$. Show that $K$ is algebraically closed.
-    
-    \textbf{Solution} Suppose $f(x)=(x-\alpha_1)\dots(x-\alpha_n) \in F[x]$ where $\alpha_i \in \overline{K}$. By the primitive element theorem we have $F(\alpha_1, \dots,  \alpha_n)= F(\beta)$. Let $p(x) \in F[x]$ be the minimal polynomial of $\beta$ over $F$. By the hypothesis, $p(\alpha)=0$ with $\alpha \in K$. Hence we have an isomorphism $\phi:F(\beta) \to F(\alpha)$ that fixes $F$ with $\phi(\beta)=\alpha$. Hence $\alpha_i \in K$
+\begin{claim}
+  Suppose we have $F \subset R \subset K$, where $F,K$ are fields, $R$ is a ring, and $K$ is algebraic over $F$. Then $R$ is a field
+\end{claim}
 
-\end{enumerate}
+\begin{proof}
+  Let $r \neq 0 \in R$. The map $M$ from $F[r] \to F[r]$ given by $x \to rx$ is $F$-linear and injective. Since $F[r]$ is finite dimensional over $F$, $M$ must be surjective as well.
+\end{proof}
+
+\begin{claim}
+  Suppose $F \subset K$ is a finite extension and $\alpha_1 \in K$. Consider the $F$-linear map $T$ from $K \to K$ given by $x \to \alpha_1 x$. 
+  Then $T$ has a block diagonal matrix with respect to some $F$-basis of $K$
+\end{claim}
+
+\begin{proof}
+  We let $K=F(\alpha_1,\dots,\alpha_n)$, so that a basis of $K$ is given by $\alpha_1^{j_1}\alpha_2^{j_2}\dots \alpha_n^{j_n}$. 
+  Let $p(x) \in F[x]$ be the irreducible polynomial of $\alpha$ and $C$ its companion matrix. 
+  The matrix of $M$ is then $\text{diag}(C,C,\dots,C)$
+\end{proof}
+
+\begin{claim}
+  Let $\alpha = \text{cos}(\frac{2\pi}{7})$. Then $[\mathbb{Q}(\alpha):\mathbb{Q}]=3$
+\end{claim}
+
+\begin{proof}
+  Let $w = e^{i\frac{2\pi}{7}}$. Then we have $w^2-2\alpha w +1 =0$
+\end{proof}
+
+\begin{claim}
+  Suppose $f(x),g(x) \text{ are coprime in }F[x]$ with $\text{deg } f < \text{deg } g=n$. Let $\alpha=\frac{f(x)}{g(x)} \in F(x)$. Then $[F(x):F(\alpha)]=n$
+\end{claim}
+
+\begin{proof}
+  Use Gauss's lemma
+\end{proof}
+
+\begin{claim}
+  Suppose that every polynomial in $F[x]$ has a root in a separable algebraic extension $K$ of $F$. Then $K$ is algebraically closed.
+\end{claim}
+
+\begin{proof}
+  Suppose $f(x)=(x-\alpha_1)\dots(x-\alpha_n) \in F[x]$ where $\alpha_i \in \overline{K}$. 
+  By the primitive element theorem we have $F(\alpha_1, \dots,  \alpha_n)= F(\beta)$. 
+  Let $p(x) \in F[x]$ be the  minimal polynomial of $\beta$ over $F$. 
+  By the hypothesis, $p(\alpha)=0$ with $\alpha \in K$. 
+  Hence we have an isomorphism $\phi:F(\beta) \to F(\alpha)$ that fixes $F$ with $\phi(\beta)=\alpha$. 
+  Hence $\alpha_i \in K$
+\end{proof}
+
+\begin{claim}
+  Let $K=\mathbb{Q}(\sqrt{2},\sqrt{3},\sqrt{5})$. Then the following hold:
+  \begin{itemize}
+    \item $K$ has degree $8$ over $\mathbb{Q}$
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $(\frac{\mathbb{Z}}{2\mathbb{Z}})^3$
+    \item there are 16 intermediate fields
+  \end{itemize}
+\end{claim}
+
+\begin{claim}
+  Let $p(x)=x^4-2 \in \mathbb{Q}[x]$ and $K$ be its splitting field. Then the following hold:
+  \begin{itemize}
+    \item $K$ has degree 8 over $\mathbb{Q}$
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to the dihedral group with 8 elements
+  \end{itemize}
+\end{claim}
+
+\begin{claim}
+  Let $K=\mathbb{Q}(e^{i\frac{2\pi}{7}})$. Then the following hold:
+  \begin{itemize}
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{6\mathbb{Z}}$
+  \end{itemize}
+\end{claim}
+
+\begin{claim}
+  Let $p(x)=x^4+1 \in \mathbb{Q}[x]$ and $K$ be its splitting field. Then the following hold:
+  \begin{itemize}
+    \item $K$ has degree 4 over $\mathbb{Q}$
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to the Klein four group
+  \end{itemize}
+\end{claim}
+
+\begin{claim}
+  Let $K=\mathbb{Q}(\sqrt{2},2^\frac{1}{3},\omega)$. Then the following hold:
+  \begin{itemize}
+    \item $K$ has degree 12 over $\mathbb{Q}$
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{2\mathbb{Z}} \times S_3$
+  \end{itemize}
+\end{claim}
 
 \end{document}
