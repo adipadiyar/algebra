@@ -171,8 +171,8 @@
   \begin{itemize}
     \item $p$ is irreducible over $\mathbb{Q}$
     \item $p$ has exactly 3 real roots
-    \item $K$ has degree 120 over $\mathbb{Q}$
-    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $S_5$
+    \item $K$ has degree 120 over $\mathbb{Q}$ 
+    \item $G = \text{Aut}(K/\mathbb{Q})$ is isomorphic to $S_5$
   \end{itemize}
 \end{claim}
 
@@ -181,7 +181,14 @@
   \begin{itemize}
     \item This follows from the Eisenstein criterion
     \item this is easy to check
-    \item 
+    \item Consider the following:
+          \begin{itemize}
+            \item $G$ acts faithfully on the roots of $p$. Since $p$ is irreducible the action is transitive.
+            \item We see that there is an intermediate subfield $L$ of degree 5 over $\mathbb{Q}$. Hence 5 must divide $|G|$.
+            \item There must exist a 5 cycle in $G$
+            \item complex conjugation is a two cycle in $G$
+            \item any 5 cycle and any two cycle generate $S_5$
+          \end{itemize} 
   \end{itemize}
 \end{proof}
 
@@ -194,14 +201,39 @@
   \end{itemize}
 \end{claim}
 
-\begin{claim}
-  Let $K=\mathbb{Q}(\alpha,\omega_5)$, where $\alpha=2^\frac{1}{5}$. Then $K$ has degree 20 over $\mathbb{Q}$
-\end{claim}
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item reduce mod 2
+    \item easy to verify
+    \item Consider the following:
+          \begin{itemize}
+            \item $G$ acts faithfully and transitively on the roots of $p$
+            \item the discriminant $\delta^2 = 81$, which means $\delta \in \mathbb{Q}$
+            \item this forces every permutation to be even
+          \end{itemize}
+  \end{itemize}
+\end{proof}
 
 \begin{claim}
-  Let $K=\mathbb{Q}(\sqrt{2},2^\frac{1}{3},\omega)$. Then the following hold:
+  Let $K=\mathbb{Q}(\alpha,\omega_5)$, where $\alpha=2^\frac{1}{5}$. Then $K$ is a degree 20 Galois extension of $\mathbb{Q}$
+\end{claim}
+
+\begin{proof}
+  Let $p(x)=x^5-2$. Consider the following:
   \begin{itemize}
-    \item $K$ has degree 12 over $\mathbb{Q}$
+    \item $K$ is the splitting field of $p$ and hence a Galois extension
+    \item $p$ is irreducible by Eisenstein 
+    \item $w_5$ has degree 4 over $\mathbb{Q}$
+    \item hence both 4 and 5 must divide $[K:\mathbb{Q}]$, which means $[K:\mathbb{Q}] \geq 20$
+    \item the diamond rule says that $[K:\mathbb{Q}] \leq 20$
+  \end{itemize}
+\end{proof}
+
+\begin{claim}
+  Let $K=\mathbb{Q}(\alpha,\omega)$, where $\alpha=2^\frac{1}{6}$. Then the following hold:
+  \begin{itemize}
+    \item $K$ is a degree 12 Galois extension of $\mathbb{Q}$
     \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{2\mathbb{Z}} \times S_3$
   \end{itemize}
 \end{claim}
