@@ -87,7 +87,58 @@
   Hence $\alpha_i \in K$
 \end{proof}
 
+\begin{claim}
+  Let $q(x)=x^4+1$. Then the following hold:
+  \begin{itemize}
+    \item $q$ is irreducible over $\mathbb{Q}$
+    \item $q$ is reducible in $\mathbb{F}_p[x]$ for all primes $p$
+  \end{itemize}
+\end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item $q(x+1)=x^4+4x^3+6x^2+4x+2$. By Eisenstein, $q(x+1)$ is irreducible. Since $x \to x+1$ is an automorphism of $\mathbb{Q}[x]$, $q(x)$ must be irreducible as well
+    \item if $p=2$, then $q(x)=(x+1)^4$ in $\mathbb{F}_2[x]$
+    \item 
+      \begin{itemize}
+        \item suppose $p$ is odd. then $8$ divides $p^2-1$
+        \item hence $\mathbb{F}_{p^2}$ has an element $\alpha$ of order $8$
+        \item we then have $q(\alpha)=0$. if $q$ was irreducible, then $\alpha$ would have degree $4$ over $\mathbb{F}_p$
+        \item but the degree of the extension $\mathbb{F}_{p^2}$ over $\mathbb{F}_p$ is 2, which makes this impossible
+      \end{itemize}
+  \end{itemize}
+\end{proof}
+
 \section{Some Galois groups}
+
+\begin{claim}
+  Let $K=\mathbb{Q}(\omega_7)$, where $\omega_7 = e^{i\frac{2\pi}{7}}$. 
+  Then we have:
+  \begin{itemize}
+    \item $K$ is a degree 6 Galois extension of $\mathbb{Q}$
+    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{6\mathbb{Z}}$
+  \end{itemize}
+\end{claim}
+
+\begin{claim}
+  Let $L=\mathbb{Q}(\alpha)$, where $\alpha = \text{cos}(\frac{2\pi}{7})$. Then the following hold:
+  \begin{itemize}
+    \item $\alpha$ has minimal polynomial $p(x)=x^3 + \frac{x^2}{2} -\frac{x}{2} - \frac{1}{8}$
+    \item $L$ is a Galois extension of $\mathbb{Q}$ of degree 3
+    \item there is no $\beta \in L$ such that $L=\mathbb{Q}(\beta)$ and $\beta^n \in \mathbb{Q}$
+  \end{itemize}
+\end{claim}
+
+\begin{proof}
+  Consider the following:
+  \begin{itemize}
+    \item We check that $p(\alpha)=0$. We have $8p(\frac{x}{2})=x^3+x^2-2x-1$ which is irreducible in $\mathbb{F}_2[x]$.
+    \item From the previous claim, $L$ is Galois if and only if the corresponding subgroup of $G$ is normal. But $G$ is abelian.
+    \item Suppose $\beta^n = a$. We may assume $a>0$ so that $a=b^n$. Let $\gamma=\frac{\beta}{b}$ so that $\gamma^n-1=0$.
+    \item Since $\gamma \in \mathbb{R}$ we must have $\gamma=1$ or $\gamma=-1$. This is not possible.
+  \end{itemize}
+\end{proof}
 
 \begin{claim}
   Let $K=\mathbb{Q}(\sqrt{2},\sqrt{3},\sqrt{5})$. Then the following hold:
@@ -134,13 +185,7 @@
   \end{itemize}
 \end{proof}
 
-\begin{claim}
-  Let $K=\mathbb{Q}(\omega_7)$, where $\omega_7 = e^{i\frac{2\pi}{7}}$. Then we have:
-  \begin{itemize}
-    \item $K$ is a degree 6 Galois extension of $\mathbb{Q}$
-    \item $\text{Aut}(K/\mathbb{Q})$ is isomorphic to $\frac{\mathbb{Z}}{6\mathbb{Z}}$
-  \end{itemize}
-\end{claim}
+
 
 \begin{proof}
   Consider the following:
