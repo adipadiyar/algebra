@@ -374,6 +374,22 @@ Suppose that $K$ is a finite Galois extension of $F$ with Galois group $G$
   This is true since there is a chain of normal subgroups $1 \subsetneq N_1 \subsetneq N_2 \dots \subsetneq N_{n+1} = G$
 \end{proof}
 
+\begin{claim}
+  Suppose we have:
+  \begin{itemize}
+    \item $H$ is the group homomorphism $G \to \text{Aut}(K[x])$
+    \item $p(x) \in K[x]$
+    \item $q(x) = \prod_{\sigma \in G} H(\sigma)(p)$
+  \end{itemize}
+
+  Then $q(x) \in F[x]$
+\end{claim}
+
+\begin{proof}
+  For $\tau \in G$,
+  \[H(\tau)(q) = \prod_\sigma H(\tau)(H(\sigma)(p)) = \prod_\sigma H(\tau \sigma) p = q(x)\]
+\end{proof}
+
 \section{Miscellaneous}
 
 \begin{claim}
@@ -392,4 +408,18 @@ Suppose that $K$ is a finite Galois extension of $F$ with Galois group $G$
             This forces $[L:E] \leq (n-1)!$
     \end{itemize}
 \end{proof}
+
+\begin{claim}
+  Suppose we have the following:
+  \begin{itemize}
+    \item $K$ is a finite extension of $F$ and $p(x) \in K[x]$
+    \item $L$ is a splitting field of $p$ over $K$
+    \item $p(x)$ factors as $(x-\alpha_1) \dots (x-\alpha_n)$ over $L$
+    \item $p_k$ be the minimal polynomial of $\alpha_k$ over $F$
+    \item $q= p_1 p_2 \dots p_n$
+  \end{itemize}
+
+  Then $p$ divides $q$ in $K[x]$
+\end{claim}
+
 \end{document}
