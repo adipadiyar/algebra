@@ -110,6 +110,17 @@
   \end{itemize}
 \end{proof}
 
+\begin{claim}
+  Let $p(x)=x^4-2$ and $\alpha>0$ be a root. Then we have the following:
+  \begin{itemize}
+    \item over $\mathbb{Q}$, $p$ is irreducible
+    \item over $\mathbb{Q}(\alpha^2)$, $p$ factorizes as $p(x)=(x^2-\alpha^2)(x^2+\alpha^2)$
+    \item over $\mathbb{Q}(\alpha^2,i)$, $p$ factorizes as $p(z)=(z^2-\alpha^2)(z^2+\alpha^2)$
+    \item over $\mathbb{Q}(\alpha)$, $p$ factorizes as $p(x)=(x-\alpha)(x+\alpha)(x^2+\alpha^2)$
+    \item over $\mathbb{Q}(\alpha,i)$, $p$ factorizes as $p(z)=(z-\alpha)(z+\alpha)(z+\alpha i)(z-\alpha i)$
+  \end{itemize}
+\end{claim}
+
 \section{Some Galois groups}
 
 \begin{claim}
@@ -352,7 +363,25 @@ Suppose that $K$ is a finite Galois extension of $F$ with Galois group $G$
 \end{claim}
 
 \begin{proof}
-  there is a unique subgroup of index $d$
+  There is a unique subgroup of index $d$
 \end{proof}
 
+\section{Miscellaneous}
+
+\begin{claim}
+  Let $L=K(x_1,\dots,x_n)$.
+  Since $S_n$ acts on $L$ by permuting the variables we have an embedding $\Psi:S_n \to \text{Aut}(L)$. 
+  Call the image $G$. 
+  Then we have $L^G = K(p_1,\dots,p_n) = E$ where $p_k$ is the symmetric polynomial of degree $k$.
+\end{claim}
+
+\begin{proof}
+    We prove both inclusions separately
+    \begin{itemize}
+      \item It is easy to see that $E \subseteq L^G$
+      \item Define $q(z) = z^n - p_1z^{n-1} + p_2z^{n-2} + \dots + (-1)^n p_n \in E[z]$. 
+            This polynomial splits over $L$ as $(z-x_1)(z-x_2)\dots(z-x_n)$, and $L$ is the splitting field. 
+            This forces $[L:E] \leq (n-1)!$
+    \end{itemize}
+\end{proof}
 \end{document}
